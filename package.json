@@ -1,0 +1,39 @@
+{
+  "name": "fe-poc-host",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm update && webpack --config webpack.config.js",
+    "check": "npm run build && node dist",
+    "dev": "webpack-dev-server --mode development --open",
+    "prepublish": "npm run build && git add . && git commit -m 'publishing' && git push && npm version patch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edmulraney/fe-poc-host.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edmulraney/fe-poc-host/issues"
+  },
+  "homepage": "https://github.com/edmulraney/fe-poc-host#readme",
+  "dependencies": {
+    "fe-poc-registry": "^1.0.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
